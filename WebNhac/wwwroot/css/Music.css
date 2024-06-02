@@ -1,0 +1,158 @@
+body {
+    background-color: #f5f5f5;
+}
+
+#header {
+    margin-top: 5px;
+}
+
+#myCarousel {
+    margin-top: 60px;
+}
+
+.navbar-nav {
+
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+/* Thanh nhac cua bai hat  */
+
+
+
+
+
+
+/* footer */
+.nct-footer-wrapper {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.sponsor-slider {
+    width: 1002px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.sponsor-slide {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.sponsor-item {
+    width: 167px;
+    height: 100px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sponsor-item img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    padding: 8px 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* footer2 */
+.t-footer-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.t-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.t-navigation {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.t-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.t-list-navi {
+    list-style-type: none;
+}
+
+.t-navi a {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.t-navi a:hover {
+    color: #666;
+}
+
+.ic_caret_arrow_next {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.t-top-keyword {
+    margin-bottom: 10px;
+}
+
+.t-top-keyword a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.t-top-keyword a:hover {
+    text-decoration: underline;
+}
+
+.ic_tsocial {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.ic_tdownload {
+    width: 120px;
+    height: auto;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .t-footer {
+        flex-direction: column;
+    }
+
+    .t-navigation {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

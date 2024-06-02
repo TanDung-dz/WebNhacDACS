@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="vi" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NhacCuaDKL - Nghe nhạc mới HOT nhất, tải nhạc MP3 chất lượng cao</title>
+    <link rel="icon" type="image/png" href="~/images/favicon_64x64.png" />
+    <meta name="keyworks"
+          content="nhac, mp3, nghe nhac, nhac cua tui, nct, nhac vang, nhac tre, nhaccuatui, nhac tru tinh, nhac xuan, remix, karaoke, nghe nhac online, edm, bolero, tai nhac, upload nhac, trance, house, loi bai hat, lossless" />
+    <meta name="description"
+          content="Trải nghiệm hàng triệu bài hát và MV có bản quyền chất lượng cao tại kho nhạc NhacCuaTui. Cùng nghe và tải nhạc online miễn phí trên nhiều nền tảng." />
+    <meta name="author" content="NhacCuaTui - Nghe nhạc mới HOT nhất, tải nhạc MP3 chất lượng cao" />
+    <meta property="og:description"
+          content="Trải nghiệm hàng triệu bài hát và MV có bản quyền chất lượng cao tại kho nhạc NhacCuaTui. Cùng nghe và tải nhạc online miễn phí trên nhiều nền tảng." />
+    <meta property="og:title" content="NhacCuaTui - Nghe tải nhạc MP3 - Lossless cực chất" />
+    <meta property="og:image" content="https://stc-id.nixcdn.com/v11/images/logo_600x600.png" />
+    <meta name="thumbnail" content="https://stc-id.nixcdn.com/v11/images/logo_600x600.png" />
+    <link rel="stylesheet" href="~/library/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            @await Html.PartialAsync("_MenuPartial")
+        </div>
+        <div class="content">
+            @RenderBody()
+        </div>
+
+        <div class="footer">
+            <div class="nct-footer-wrapper">
+                <div class="footer">
+                    <div class="t-list-cooperation">
+                        <div class="t-footer-container">
+                            <p class="t-title-cooperation">Liên kết và hợp tác</p>
+                            <div class="t-box-list-cooperation">
+                                <div class="sponsor-slider">
+                                    <div class="sponsor-slide">
+                                        <div class="sponsor-item">
+                                            <a href="https://www.universalmusic.com/" target="_blank" rel="nofollow">
+                                                <img src="https://stc-id.nixcdn.com/v11/images/footer/1-new.png"
+                                                     alt="Sponsor 1">
+                                            </a>
+                                        </div>
+                                        <div class="sponsor-item">
+                                            <a href="https://www.sonymusic.com/" target="_blank" rel="nofollow">
+                                                <img src="https://stc-id.nixcdn.com/v11/images/footer/2-new.png"
+                                                     alt="Sponsor 2">
+                                            </a>
+                                        </div>
+                                        <!-- Thêm các nhà tài trợ khác tại đây -->
+                                        <div class="sponsor-item">
+                                            <a href="https://www.acrcloud.com/" target="_blank" rel="nofollow">
+                                                <img src="https://stc-id.nixcdn.com/v11/images/footer/7-new.png"
+                                                     alt="Sponsor 3">
+                                            </a>
+                                        </div>
+
+                                        <div class="sponsor-item">
+                                            <a href="https://www.wmg.com/" target="_blank" rel="nofollow">
+                                                <img src="https://stc-id.nixcdn.com/v11/images/footer/17.png" alt="Sponsor 4">
+                                            </a>
+                                        </div>
+
+                                        <div class="sponsor-item">
+                                            <a href="http://www.ygplus.com/" target="_blank" rel="nofollow">
+                                                <img src="https://stc-id.nixcdn.com/v11/images/footer/19.png" alt="Sponsor 5">
+                                            </a>
+                                        </div>
+
+                                        <div class="sponsor-item">
+                                            <a href="https://www.believemusic.com/" target="_blank" rel="nofollow">
+                                                <img src="https://stc-id.nixcdn.com/v11/images/footer/9.png" alt="Sponsor 6">
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="t-footer-container">
+                <div class="t-footer">
+                    <div class="t-navigation">
+                        <p class="t-title">Hỗ trợ</p>
+                        <ul class="t-list-navi">
+                            <li><a href="#">- Trợ giúp</a></li>
+                            <li><a href="#">- Sơ Đồ</a></li>
+                            <li><a href="#">- Tuyển Tập</a></li>
+                            <li><a href="#">- NCCI</a></li>
+                            <li><a href="#">- Liên hệ quảng cáo</a></li>
+                            <li><a href="#">- Chính sách bảo mật</a></li>
+                            <li><a href="#">- Chính sách SHTT</a></li>
+                            <li><a href="#">- Thỏa thuận sử dụng</a></li>
+                        </ul>
+                    </div>
+                    <div class="t-navigation">
+                        <p class="t-title">Sản phẩm khác</p>
+                        <ul class="t-list-navi">
+
+                            <li><a href="#">- Mobile App</a></li>
+                            <li><a href="#">- Mobile Web</a></li>
+                            <li><a href="#">- Smart TV</a></li>
+                            <li><a href="#">- Desktop</a></li>
+                            <li><a href="#">- Dịch vụ 3G</a></li>
+                            <li><a href="#">- NCT Corp</a></li>
+                            <li><a href="#">- Tuyển dụng</a></li>
+                        </ul>
+                    </div>
+                    <div class="t-navigation last">
+                        <p class="t-title in-col">Kết nối với chúng tôi</p>
+                        <div style="width: 100%; float: left; margin-bottom: 16px">
+                            <a href="https://www.facebook.com/NhacCuaTuiOfficial" rel="nofollow" target="_blank"
+                               title="Facebook">
+                                <img class="ic_tsocial"
+                                     src="https://stc-id.nixcdn.com/v11/images/footer/t_ic_facebook.png" alt="facebook" />
+                            </a>
+                            <a href="#" rel="nofollow" target="_blank" title="Tiktok">
+                                <img class="ic_tsocial last" src="https://stc-id.nixcdn.com/v11/images/footer/t_ic_tiktok.png"
+                                     alt="" />
+                            </a>
+                            <a href="https://zalo.me/4060780154085925782" rel="nofollow" target="_blank" title="Zalo">
+                                <img class="ic_tsocial last" src="https://stc-id.nixcdn.com/v11/images/footer/t_ic_zalo.png"
+                                     alt="" />
+                            </a>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="https://play.google.com/store/apps/details?id=ht.nct&hl=vi" rel="nofollow"
+                                   target="_blank" title="Google Play">
+                                    <img class="ic_tdownload"
+                                         src="https://stc-id.nixcdn.com/v11/images/footer/t_google_play.png" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://apps.apple.com/vn/app/nhaccuatui-find-mp3-music/id1210763463" rel="nofollow"
+                                   target="_blank" title="App Store">
+                                    <img class="ic_tdownload"
+                                         src="https://stc-id.nixcdn.com/v11/images/footer/t_app_store.png" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://cdc.hispace.hicloud.com/000000fC" rel="nofollow" target="_blank"
+                                   title="App Gallery">
+                                    <img class="ic_tdownload last"
+                                         src="https://stc-id.nixcdn.com/v11/images/footer/t_appgallery.png" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div id="modalSignup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sign Up</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalLogin" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Login</h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="~/library/jquery/jquery.min.js"></script>
+    <script src="~/library/bootstrap/bootstrap.min.js"></script>
+    <script src="~/js/script.js"></script>
+    <script>(function (w, d) { w.CollectId = "6658587c1063215eaa12299a"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async = true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

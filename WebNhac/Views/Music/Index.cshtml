@@ -1,0 +1,84 @@
+﻿@model WebNhac.ViewModels.MusicViewModel
+
+<div class="row" style="margin-top: 60px;">
+    <div class="col-md-7" style="margin-right:initial">
+        @foreach (var item in Model.Musics)
+        {
+            <h3>@item.Name</h3>
+            <div class="row">
+                <audio id="track" autoplay>
+                    <source src="" type="audio/mpeg" />
+                </audio>
+                <div id="player-container">
+                    <!-- Progress -->
+                    <div id="timeline">
+                        <div id="scrub"></div>
+                        <div id="playhead"></div>
+                    </div>
+                    <!-- Play button -->
+                    <div id="play-pause" class="play" data-audio="@item.Fille">
+                        Play
+                    </div>
+                    <!-- Artist Thumb-->
+                    <div id="thumb" style=" background-image: url(@item.Thumbnail);"></div>
+                    <div class="item-inner">
+                        <!-- Title-->
+                        <div class="item-title">@item.Name</div>
+                        <div class="item-subtitle">@Model.Author.Name</div>
+                        <!-- Time -->
+                        <div id="time-bar">
+                            <div id="time-holder">
+                                <div id="is-left">
+                                    <span id="current-time">
+                                        00:00
+                                    </span>
+                                </div>
+                                <div id="is-right">
+                                    <span id="duration-time">
+                                        <span class="duration-minutes" data-duration-minutes="true">0</span>:<span class="duration-minutes" data-duration-seconds="true">00</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Repeat Button-->
+                    <div class="repeat-button">
+                        <div id="repeat" class="icon-repeat" repeat="0"></div>
+                    </div>
+                </div>
+            </div>
+            @* lyric *@
+            <div class="bxh-music">Lời bài hát </div>
+            <div class="panel-body">
+                <div class="row">
+                    <a onclick="toggleDiv()">Xem thêm</a>
+                    <div id="lyric" style="display:none">@Html.Raw(item.Lyric)</div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-5" style="margin-top: 50px">
+        <h4>Nghe tiếp:</h4>
+        @foreach (var item in Model.randomMusics)
+        {
+            <div class="">
+                    <i class="fas fa-music"></i>
+                <div class="music-info">
+                    <a href="/bai-hat/@item.Link-@item.IdMusic">
+                        <h5 style="font-weight: bold;">@item.Name</h5>
+                    </a>
+                    <h5><i>@Model.singerRandom[0].Name</i></h5>
+                    <hr style="border:ridge;color:black;border-width: 2px">
+                </div>
+            </div>
+            Model.singerRandom.RemoveAt(0);
+
+        }
+
+    </div>
+</div>
+@section scripts {
+    
+    <script src="~/js/play.js"></script>
+    <script src="~/js/toggle.js"></script>
+}

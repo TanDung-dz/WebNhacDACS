@@ -1,0 +1,19 @@
+﻿@model WebNhac.ViewModels.HomeViewModel
+
+<div class="panel panel-default">
+    <div class="bxh-music">TOP NHẠC ÂU MỸ </div>
+    <div class="panel-body">
+        <div class="row">
+            @foreach (var item in Model.NhacAuMy)
+            {
+                <a href="/bai-hat/@item.Link-@item.IdMusic">
+                    <div class="col-md-3">
+                        <img src="@item.Thumbnail" alt="@item.Name" width="100%" height="120" />
+                        <h4 style="text-align: center;">@item.Name</h4>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+
+</div>

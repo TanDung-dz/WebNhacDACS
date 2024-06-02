@@ -1,0 +1,27 @@
+﻿@model WebNhac.ViewModels.HomeViewModel
+<div class="panel panel-default">
+    <div class="bxh-music">BXH BÀI HÁT</div>
+    <div class="panel-body">
+            @{
+                int stt = 1;
+                foreach(var item in Model.BXH)
+                {
+                    string x = "special-number";
+                    x = x + stt.ToString();
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span class="@x">@stt</span>
+                        </div>
+                        <div class="col-md-10">
+                            <a href="/bai-hat/@item.Link-@item.IdMusic">
+                                <h4 style="font-weight: bold;">@item.Name</h4>
+                            </a>
+                            <h5><i>@Model.bxhSinger[0].Name</i></h5>
+                        </div>
+                    </div>
+                    stt++;Model.bxhSinger.RemoveAt(0);
+                }
+            }
+            
+        
+    </div>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Bootstrap Tabs Example</title>
+</head>
+<body>
+    <div class="container mt-5" style="margin-top:60px">
+        <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="tab1" data-bs-toggle="pill" href="#content1" role="tab" aria-controls="content1" aria-selected="true">
+                    <i class="fas fa-chart-pie"></i> Tab 1
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab2" data-bs-toggle="pill" href="#content2" role="tab" aria-controls="content2" aria-selected="false">
+                    <i class="fas fa-chart-line"></i> Tab 2
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tab3" data-bs-toggle="pill" href="#content3" role="tab" aria-controls="content3" aria-selected="false">Link</a>
+            </li>
+        </ul>
+
+        <div class="tab-content py-3 mt-2">
+            <div class="tab-pane fade show active" id="content1" role="tabpanel" aria-labelledby="tab1">
+                Tab 1 content
+            </div>
+            <div class="tab-pane fade" id="content2" role="tabpanel" aria-labelledby="tab2">
+                Tab 2 content
+            </div>
+            <div class="tab-pane fade" id="content3" role="tabpanel" aria-labelledby="tab3">
+                Link content
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

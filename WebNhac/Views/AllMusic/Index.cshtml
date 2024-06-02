@@ -1,0 +1,60 @@
+﻿@model WebNhac.ViewModels.AllMusicViewModel
+
+<div class="row" style="margin-top: 60px;">
+    <table id="example" class="table table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Thubmnail</th>
+                <th>Tên bài hát</th>
+                <th>Ngày phát hành</th>
+                <th>Ca sĩ</th>
+                <th>Số lượt nghe</th>
+                <th>Nghe bài này</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model.Musics)
+            {
+                <tr>
+                    <td>
+                        <img src="@item.Thumbnail" width="200" alt="@item.Name" height="200" />
+                    </td>
+                    <td>@item.Name</td>
+                    <td>@item.PublishDate</td>
+                    <td>@item.IdSinger</td>
+                    <td>@item.CountListened</td>
+                    <td>
+                        <a class="btn btn-info btn-lg" href="/bai-hat/@item.Link-@item.IdMusic" target="_blank"><span class="glyphicon glyphicon-music"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts {
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "language": {
+                    "sProcessing": "Đang xử lý...",
+                    "sLengthMenu": "Hiển thị _MENU_ bài hát trong tổng số",
+                    "sZeroRecords": "Không tìm thấy bài hát nào",
+                    "sInfo": "Hiển thị _START_ đến _END_ của _TOTAL_ bài hát",
+                    "sInfoEmpty": "Hiển thị 0 đến 0 của 0 bài hát",
+                    "sInfoFiltered": "(đã lọc từ _MAX_ bài hát)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Tìm:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "<<",
+                        "sPrevious": "<",
+                        "sNext": ">",
+                        "sLast": ">>"
+                    }
+                }
+            });
+        });
+    </script>
+}

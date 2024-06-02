@@ -1,0 +1,128 @@
+﻿@model WebNhac.ViewModels.PlaylistEntryViewModel
+
+<div class="row" style="margin-top: 60px">
+    <h3 id="tenbaihat">@Model.Musics.FirstOrDefault()?.Name</h3>
+    <div class="row">
+        <audio id="track" autoplay>
+            <source id="audio-source" src="@Model.Musics.FirstOrDefault()?.Fille" type="audio/mpeg" />
+        </audio>
+
+        <div id="player-container">
+            <!-- Progress -->
+            <div id="timeline">
+                <div id="scrub"></div>
+                <div id="playhead"></div>
+            </div>
+            <!-- Play button -->
+            <div id="play-pause" class="play" data-audio="">
+                Play
+            </div>
+
+            <!-- Artist Thumb-->
+            <div id="thumb" style="background-image: url('@Model.Musics.FirstOrDefault()?.Thumbnail')"></div>
+
+            <div class="item-inner">
+                <!-- Title-->
+                <div class="item-title">@Model.Musics.FirstOrDefault()?.Name</div>
+                <div class="item-subtitle">@Model.Musics.FirstOrDefault()?.Name</div>
+
+                <!-- Time -->
+                <div id="time-bar">
+                    <div id="time-holder">
+                        <div id="is-left">
+                            <span id="current-time">
+                                00:00
+                            </span>
+                        </div>
+                        <div id="is-right">
+                            <span id="duration-time">
+                                <span class="duration-minutes" data-duration-minutes="true">0</span>:<span class="duration-minutes" data-duration-seconds="true">00</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat Button -->
+            <div class="repeat-button">
+                <div id="repeat" class="icon-repeat" repeat="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <td colspan="4" style="font-weight: bold; font-size: 20px;">Bài hát tiếp theo</td>
+            </tr>
+            @foreach (var item in Model.Musics)
+            {
+                <tr>
+                    <td colspan="3">
+                        <a href="javascript:void(0)" onclick="ChangeMusic('@item.Fille', '@item.Name', '@item.Name', '@item.Thumbnail', '@item.IdMusic')">@item.Name</a>
+                    </td>
+                    <td style="text-align: right">
+                        <a class="btn btn-default">aaaa</a>
+                        <a class="btn btn-default">bbbb</a>
+                        <a class="btn btn-default" href="@item.Fille" download="nhac.mp3"><span class="glyphicon glyphicon-download-alt"></span> Tải xuống</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Lyric -->
+    <div class="bxh-music">Lời bài hát </div>
+    <div class="panel-body">
+        <div class="full-lyric" id="full-lyric">
+            @Html.Raw(Model.Musics.FirstOrDefault()?.Lyric)
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        // Store all lyrics in a JavaScript object
+        var lyrics = {};
+        @foreach (var item in Model.Musics)
+        {
+            <text>
+                lyrics["@item.IdMusic"] = `@Html.Raw(item.Lyric.Replace("`", "\\`"))`;
+            </text>
+        }
+
+            function ChangeMusic(audioUrl, name, artist, thumbnailUrl, lyricId) {
+                // Change the audio source
+                var audioSource = document.getElementById('audio-source');
+                audioSource.src = audioUrl;
+
+                // Load the new audio
+                var audio = document.getElementById('track');
+                audio.load();
+
+                // Update the song title and artist
+                document.getElementById('tenbaihat').innerText = name;
+                document.querySelector('.item-title').innerText = name;
+                document.querySelector('.item-subtitle').innerText = artist;
+
+                // Update the thumbnail
+                document.getElementById('thumb').style.backgroundImage = 'url(' + thumbnailUrl + ')';
+
+                // Update the lyrics
+                document.getElementById('full-lyric').innerHTML = lyrics[lyricId];
+            }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set the initial song details
+            var initialTrack = document.getElementById('audio-source').src;
+            var initialName = document.querySelector('.item-title').innerText;
+            var initialArtist = document.querySelector('.item-subtitle').innerText;
+            var initialThumbnail = document.getElementById('thumb').style.backgroundImage.replace('url(', '').replace(')', '');
+            var initialLyricId = '@Model.Musics.FirstOrDefault()?.IdMusic';
+
+            ChangeMusic(initialTrack, initialName, initialArtist, initialThumbnail, initialLyricId);
+        });
+    </script>
+    <script src="~/js/play.js"></script>
+    <script src="~/js/toggle.js"></script>
+}

@@ -1,0 +1,58 @@
+﻿@model WebNhac.ViewModels.PlaylistViewModel
+
+<div class="row" style="margin-top: 50px">
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="bxh-music">DANH SÁCH PLAYLIST</div>
+            <div class="panel-body">
+                <div class="row">
+                    @foreach (var item in Model.PlaylistMusic)
+                    {
+                        <a href="/nghe-playlist/@item.Link-@item.IdPlaylist">
+                            <div class="col-md-3">
+                                <img src="@item.Thumbnail" alt="@item.Name" width="100%" />
+                                <h4 style="text-align: center;">@item.Name</h4>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-danger">
+            <div class="panel-body">
+                <a title="Top DJs" target="target"
+                   href="https://www.nhaccuatui.com/chu-de/top-djs.wepfbifuj.html"
+                   onclick="_gaq.push(['_trackEvent', 'Home', 'Click', 'Chu De Hot']);lt(['home','Chu-de-hot','click','topic','94','','']);">
+                    <img src="https://avatar-ex-swe.nixcdn.com/topic/thumb/2020/06/18/9/5/f/7/1592468690285_org.jpg"
+                         alt="top djs">
+                </a>
+                <a title="Lofi" target="target" href="https://www.nhaccuatui.com/chu-de/lofi.wrayiedhg.html"
+                   onclick="_gaq.push(['_trackEvent', 'Home', 'Click', 'Chu De Hot']);lt(['home','Chu-de-hot','click','topic','151','','']);">
+                    <img src="https://avatar-ex-swe.nixcdn.com/topic/thumb/2020/06/15/b/1/e/6/1592214676121_org.jpg"
+                         alt="lofi">
+                </a>
+                <a title="Nhạc Ngoại Lời Việt" target="target"
+                   href="https://www.nhaccuatui.com/chu-de/nhac-ngoai-loi-viet.weoawdajp.html"
+                   onclick="_gaq.push(['_trackEvent', 'Home', 'Click', 'Chu De Hot']);lt(['home','Chu-de-hot','click','topic','59','','']);">
+                    <img src="https://avatar-ex-swe.nixcdn.com/topic/thumb/2021/04/23/a/e/1/8/1619169761173_org.jpg"
+                         alt="nhac ngoai loi viet">
+                </a>
+                <a title="Giải Thưởng Âm Nhạc" target="target"
+                   href="https://www.nhaccuatui.com/chu-de/giai-thuong-am-nhac.weizycujk.html"
+                   onclick="_gaq.push(['_trackEvent', 'Home', 'Click', 'Chu De Hot']);lt(['home','Chu-de-hot','click','topic','39','','']);">
+                    <img src="https://avatar-ex-swe.nixcdn.com/topic/thumb/2020/09/25/7/3/f/7/1601005758702_org.jpg"
+                         alt="giai thuong am nhac">
+                </a>
+                <a title="Nhạc Nhật" target="target"
+                   href="https://www.nhaccuatui.com/chu-de/nhac-nhat.wrsaecqap.html"
+                   onclick="_gaq.push(['_trackEvent', 'Home', 'Click', 'Chu De Hot']);lt(['home','Chu-de-hot','click','topic','518','','']);">
+                    <img src="https://avatar-ex-swe.nixcdn.com/topic/thumb/2021/05/20/3/3/d/7/1621496790761_org.jpg"
+                         alt="nhac nhat">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

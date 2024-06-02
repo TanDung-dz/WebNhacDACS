@@ -1,0 +1,46 @@
+﻿@model WebNhac.ViewModels.MVViewModel
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v20.0&appId=263813834267377" nonce="USIm8pg1"></script>
+
+<div class="row" style="margin-top: 70px">
+    @if (Model.Mvs != null && Model.Mvs.Any())
+    {
+        @foreach (var item in Model.Mvs)
+        {
+            <div class="col-md-8">
+                <iframe width="720" height="445" src="@item.YtbLink" >
+                </iframe>
+                <h4 style="text-align: center;">@item.Name</h4>
+                <br />
+                <div>
+                    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="" data-numposts="5" width="720"></div>
+                </div>
+            </div>
+            
+        }
+        <div class="col-md-4">
+            <p>MV khác</p>
+            @{
+                @foreach (var itemm in Model.randomMvs)
+                {
+                    <a href="/xem-mv/@itemm.Link-@itemm.IdMv">
+                        <div class="col-md-12">
+                            <img href="/xem-mv/@itemm.Link-@itemm.IdMv" src="@itemm.Thumbnail" alt="@itemm.Name" width="100%" />
+                            <p style="text-align: center;">@itemm.Name</p>
+                        </div>
+                    </a>
+                    <hr />
+                }
+            }
+
+        </div>
+    }
+    else
+    {
+        <p>Không có mục nào để hiển thị.</p>
+    }
+    
+    
+</div>
+
