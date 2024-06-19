@@ -79,11 +79,11 @@ app.UseEndpoints(endpoints =>
          pattern: "dang-xuat",
          defaults: new { controller = "User", action = "Logout" }
          );
-    //endpoints.MapControllerRoute(
-    //     name: "admin-thong-tin",
-    //     pattern: "admin-thong-tin",
-    //     defaults: new { controller = "User", action = "Info" }
-    //     );
+    endpoints.MapControllerRoute(
+         name: "quan-tri",
+         pattern: "quan-tri",
+         defaults: new { controller = "Admin", action = "Index" }
+         );
     endpoints.MapControllerRoute(
         name: "playlist",
         pattern: "playlist",
