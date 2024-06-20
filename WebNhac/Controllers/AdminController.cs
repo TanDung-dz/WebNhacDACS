@@ -22,6 +22,42 @@ namespace WebNhac.Controllers
             };
             return View(viewModel);
         }
+        public async Task<IActionResult> QLNhac()
+        {
+            var menus = await _context.Menus.Where(m => m.Hide == false).OrderBy(m => m.Order).ToListAsync();
+            var viewModel = new AdminViewModel
+            {
+                Menus = menus,
+            };
+            return View(viewModel);
+        }
+        public async Task<IActionResult> QLDanhmuc()
+        {
+            var menus = await _context.Menus.Where(m => m.Hide == false).OrderBy(m => m.Order).ToListAsync();
+            var viewModel = new AdminViewModel
+            {
+                Menus = menus,
+            };
+            return View(viewModel);
+        }
+        public async Task<IActionResult> QLMV()
+        {
+            var menus = await _context.Menus.Where(m => m.Hide == false).OrderBy(m => m.Order).ToListAsync();
+            var viewModel = new AdminViewModel
+            {
+                Menus = menus,
+            };
+            return View(viewModel);
+        }
+        public async Task<IActionResult> QLNguoidung()
+        {
+            var menus = await _context.Menus.Where(m => m.Hide == false).OrderBy(m => m.Order).ToListAsync();
+            var viewModel = new AdminViewModel
+            {
+                Menus = menus,
+            };
+            return View(viewModel);
+        }
         public async Task<IActionResult> _MenuPartial()
         {
             return PartialView();
