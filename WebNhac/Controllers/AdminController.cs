@@ -89,6 +89,7 @@ namespace WebNhac.Controllers
                 music.IdAdmin = 1;
                 music.PublishDate = DateTime.Now;
                 music.Hide=false;
+                music.CountListened = 0;
                 _context.Musics.Add(music);
                 _context.SaveChanges();
                 return RedirectToAction("QLNhac");
