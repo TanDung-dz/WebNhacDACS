@@ -85,6 +85,26 @@ app.UseEndpoints(endpoints =>
          defaults: new { controller = "Admin", action = "Index" }
          );
     endpoints.MapControllerRoute(
+         name: "quan-tri-nhac",
+         pattern: "quan-tri-nhac",
+         defaults: new { controller = "Admin", action = "QLNhac" }
+         );
+    endpoints.MapControllerRoute(
+         name: "quan-tri-danh-muc",
+         pattern: "quan-tri-danh-muc",
+         defaults: new { controller = "Admin", action = "QLDanhmuc" }
+         );
+    endpoints.MapControllerRoute(
+         name: "quan-tri-MV",
+         pattern: "quan-tri-MV",
+         defaults: new { controller = "Admin", action = "QLMV" }
+         );
+    endpoints.MapControllerRoute(
+         name: "quan-tri-user",
+         pattern: "quan-tri-user",
+         defaults: new { controller = "Admin", action = "QLNguoidung" }
+         );
+    endpoints.MapControllerRoute(
         name: "playlist",
         pattern: "playlist",
         defaults: new { controller = "Playlist", action = "Index" }
