@@ -1,7 +1,69 @@
-﻿
+﻿@model WebNhac.ViewModels.AdminViewModel
 @{
     ViewData["Title"] = "QLNhac";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>QLNhac page</h2>
+<h2 style="text-align:center">Quản lý bài hát</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách bài hát</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .table th, .table td {
+            font-size: 12px; /* Kích thước font nhỏ hơn */
+        }
+
+        .btn {
+            /* font-size: 12px; */ /* Kích thước font của nút nhỏ hơn */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container" style="margin:unset">
+        <h2>Danh sách bài hát</h2> <a type="button" asp-action="AddMusic" class="btn btn-success" style="position:center">Thêm mới</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Music type</th>
+                    <th>Singer</th>
+                    <th>Author</th>
+                    <th>Publish date</th>
+                    <th>Count listened</th>
+                    <th>Hide</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Musics)
+                {
+                    <tr>
+                        <td>@item.IdMusic</td>
+                        <td>@item.Name</td>
+                        <td>@item.IdMusictype</td>
+                        <td>@item.IdSinger</td>
+                        <td>@item.IdAuthor</td>
+                        <td>@item.PublishDate</td>
+                        <td>@item.CountListened</td>
+                        <td>@item.Hide.ToString()</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary">Edit</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,8 +1,44 @@
-﻿
+﻿@model WebNhac.ViewModels.AdminViewModel
 @{
     ViewData["Title"] = "QLMV";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>QLMV Page</h2>
+<h2 style="text-align:center">QLMV Page</h2>
+<body>
 
+    <div class="container" style="margin:unset">
+        <h2>Danh sách MV</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Singer</th>
+                    <th>Publish date</th>
+                    <th>Count view</th>
+                    <th>Hide</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.mvs)
+                {
+                    <tr>
+                        <td>@item.IdMv</td>
+                        <td>@item.Name</td>
+                        <td>@item.IdSinger</td>
+                        <td>@item.PublishDate</td>
+                        <td>@item.CountView</td>
+                        <td>@item.Hide.ToString()</td>
+                        <td>
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>

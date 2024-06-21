@@ -1,8 +1,44 @@
-﻿
+﻿@model WebNhac.ViewModels.AdminViewModel
 @{
     ViewData["Title"] = "QLNguoidung";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>QLNguoidung Page</h2>
+<h2 style="text-align:center">QLNguoidung Page</h2>
+<body>
 
+    <div class="container" style="margin:unset">
+        <h2>Danh sách Người dùng</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Hide</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Users)
+                {
+                    <tr>
+                        <td>@item.IdUser</td>
+                        <td>@item.Username</td>
+                        <td>@item.Name</td>
+                        <td>@item.Email</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Hide.ToString()</td>
+                        <td>
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-danger" >Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
